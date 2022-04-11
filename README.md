@@ -1,16 +1,29 @@
 # notificaciones_push
 
-A new Flutter project.
+Importante:
 
-## Getting Started
+# En caso de falla de instalación del Flutter con el Path
 
-This project is a starting point for a Flutter application.
+Hay q installer las Tools de VMWare
+Y luego:
 
-A few resources to get you started if this is your first Flutter project:
+Importante: En caso de que les falle la instalación en este punto, hacerlo de nuevo sin usar las comillas dobles.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- Terminal abierto: vim $HOME/.zshrc
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Presionar "I" para abrir el modo de inserción.
+
+- Agregar la línea que indica el profesor según su ruta:
+
+export PATH="$PATH:/Users/macpipe/Development/flutter/bin"
+
+- Presionar "Esc" y luego :wq! en la terminar para salir del modo de edición.
+
+- Escribir en la terminal: source .zshrc (para recargar la terminal).
+
+- Check: flutter --version
+
+
+
+
+
