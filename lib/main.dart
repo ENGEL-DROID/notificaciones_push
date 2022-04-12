@@ -64,7 +64,7 @@ class _MyAppState extends State<MyApp> {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const HomeScreen(),
+        '/': (context) => HomeScreen(),
         '/message': (context) => const MessageScreen(),
         // '/page2': (context) => Page2(),
       },
