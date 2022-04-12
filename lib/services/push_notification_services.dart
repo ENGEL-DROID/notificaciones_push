@@ -24,6 +24,8 @@ class PushNotificationServices {
   static Future initializeApp() async {
     // Inicializar Firebase:
     await Firebase.initializeApp();
+    // solicitar permisos Apple / Web:
+    requestPermission();
     // Obtener el token:
     token = await FirebaseMessaging.instance.getToken();
     // Imprimir token en consola:
@@ -69,5 +71,20 @@ class PushNotificationServices {
     print(message.data);
     // _messageStream?.add(message.notification?.title ?? 'No hay mensaje');
     _messageStream?.add(message.data['product'] ?? 'No hay data');
+  }
+
+  // permisos de notificaciones push tanto Apple como Web:
+  static requestPermission() async {
+    NotificationSettings settings = await messaging.requestPermission(
+      alert: true,
+      announcement: false,
+      badge: true,
+      carPlay: false,
+      criticalAlert: false,
+      provisional: false,
+      sound: true,
+    );
+
+    print('User push notification status ${settings.authorizationStatus}');
   }
 }

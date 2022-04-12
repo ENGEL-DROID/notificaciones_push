@@ -3,10 +3,19 @@ import 'package:notificaciones_push/screens/home_screen.dart';
 import 'package:notificaciones_push/screens/message_screen.dart';
 import 'package:notificaciones_push/services/push_notification_services.dart';
 
+import 'package:flutter/foundation.dart' show defaultTargetPlatform;
+
 void main() async {
+  //
   // Inicializar Firebase:
-  WidgetsFlutterBinding.ensureInitialized();
-  await PushNotificationServices.initializeApp();
+  // TODO: integrar firebase para desktop y web
+  // Ejecutar sólo si es android o ios:
+  if (defaultTargetPlatform == TargetPlatform.android ||
+      defaultTargetPlatform == TargetPlatform.iOS) {
+    WidgetsFlutterBinding.ensureInitialized();
+    await PushNotificationServices.initializeApp();
+  }
+
   // Inicializar la aplicación:
   runApp(const MyApp());
 }
